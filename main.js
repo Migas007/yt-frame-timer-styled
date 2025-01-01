@@ -83,3 +83,24 @@ const parseForTime = (event) => {
         document.getElementById(event.target.id).value = `${finalFrame}`;
     }
 }
+
+function toggleTheme() {
+    const body = document.body;
+    const themeButton = document.getElementById('theme-toggle');
+    const icon = themeButton.querySelector('.icon');
+  
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
+  
+    if (body.classList.contains('dark')) {
+      icon.textContent = '🌙';
+    } else {
+      icon.textContent = '☀️';
+    }
+  }
+  
+  // Set default theme
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('light'); // Default is light mode
+  });
+  
